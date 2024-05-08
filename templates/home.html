@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumor Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #343a40; /* Dark grey background */
+            color: #ffffff; /* White text */
+        }
+        footer {
+            background-color: #6c757d; /* Dark grey footer */
+            color: #ffffff; /* White text */
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .btn-primary {
+            background-color: #5e5ce6;
+            border-color: #5e5ce6;
+        }
+        .btn-primary:hover {
+            background-color: #4946b8;
+            border-color: #4946b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <header class="mt-5">
+            <h1>Tumor Prediction</h1>
+        </header>
+
+        <section class="content mt-4">
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="file" class="d-block mb-2">Upload Image:</label>
+                    <div class="custom-file">
+                        {{ form.file(class="custom-file-input") }}
+                        <label class="custom-file-label" for="file">Choose file</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <img src="" alt="" class="img-fluid">
+                    {{ form.submit(class="btn btn-primary btn-reflection") }}
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tumor Prediction. All rights reserved.</p>
+    </footer>
+    <script>
+        // Add reflection effect to submit button
+        const submitButton = document.querySelector('.btn-reflection');
+        submitButton.addEventListener('mouseover', () => {
+            submitButton.style.boxShadow = '0px 0px 10px 0px rgba(255, 255, 255, 0.5)';
+        });
+        submitButton.addEventListener('mouseout', () => {
+            submitButton.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>

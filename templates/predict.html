@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumor Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #343a40; /* Dark grey background */
+            color: #ffffff; /* White text */
+        }
+        footer {
+            background-color: #6c757d; /* Dark grey footer */
+            color: #ffffff; /* White text */
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="mt-5">
+            <h1>Prediction Result</h1>
+        </header>
+
+        <section class="content mt-4">
+            <img src="{{ url_for('static', filename='image/' + file.filename) }}" alt="Uploaded Image" class="img-fluid">
+            <p><strong>Predicted Class:</strong> {{ predicted_class }}</p>
+            <p><strong>Confidence:</strong> {{ confidence }}</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tumor Prediction. All rights reserved.</p>
+    </footer>
+</body>
+</html>
